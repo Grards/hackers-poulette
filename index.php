@@ -6,7 +6,7 @@
 
     <h1 class="text-center text-5xl lg:text-6xl mt-5 mb-5 text-red-600 font-bold">Hackers poulette</h1>
 
-    <form id="chick-form" method="POST" action="./backend/send.php" class="flex flex-col ml-5 mr-5 w-100 lg:w-1/2 lg:mx-auto mt-14 bg-red-500 p-8 rounded-xl relative z-10">
+    <form id="chick-form" enctype="multipart/form-data" method="POST" action="./backend/send.php" class="flex flex-col ml-5 mr-5 w-100 lg:w-1/2 lg:mx-auto mt-14 bg-red-500 p-8 rounded-xl relative z-10">
         <label for="firstname" class="mb-2 mt-2 text-slate-50 font-bold uppercase">Firstname :</label>
         <span class="italic text-neutral-950 text-sm"><b class="text-amber-200">*</b> Enter your firstname here. Or is it your lastname ..?</span>
         <input type="text" id="firstname" name="firstname" class="p-2 rounded-md" required aria-required="true" maxlength="100" autocomplete="off">
@@ -21,7 +21,7 @@
 
         <label for="file" class="mb-2 mt-2 text-slate-50 font-bold uppercase">File (png or jpeg) :</label>
         <span class="italic text-neutral-950 text-sm">Send me a gentle chick with superb feathers.</span>
-        <input type="file" id="file" name="file" accept="image/png, image/jpeg" class="text-slate-50 rounded-md" aria-required="false" autocomplete="off">
+        <input type="file" id="file" name="file" accept="image/png, image/jpeg, image/jpg" class="text-slate-50 rounded-md">
 
         <label for="description" class="mb-2 mt-2 text-slate-50 font-bold uppercase">Description :</label>
         <span class="italic text-neutral-950 text-sm"><b class="text-amber-200">*</b> Tell us about your life as a chick. It fascinates me. Really, I swear!</span>
