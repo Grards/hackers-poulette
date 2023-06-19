@@ -2,9 +2,13 @@
     require "./views/partials/header.php"; 
 ?>
 
-
-
     <h1 class="text-center text-5xl lg:text-6xl mt-5 mb-5 text-red-600 font-bold">Hackers poulette</h1>
+
+    <?php 
+        if(isset($_GET[htmlspecialchars("send")])){
+            echo '<section class="fading bg-emerald-500 text-center text-slate-50 p-2 mt-10 mb-5 w-96 mx-auto"><p>Message sended !</p></section>';
+        }
+    ?>
 
     <form id="chick-form" enctype="multipart/form-data" method="POST" action="./backend/send.php" class="flex flex-col ml-5 mr-5 w-100 lg:w-1/2 lg:mx-auto mt-14 bg-red-500 p-8 rounded-xl relative z-10">
         <label for="firstname" class="mb-2 mt-2 text-slate-50 font-bold uppercase">Firstname :</label>
