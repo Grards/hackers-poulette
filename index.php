@@ -10,7 +10,7 @@
         }
     ?>
 
-    <form id="chick-form" enctype="multipart/form-data" method="POST" action="./backend/send.php" class="flex flex-col ml-5 mr-5 w-100 lg:w-1/2 lg:mx-auto mt-14 bg-red-500 p-8 rounded-xl relative z-10">
+    <form id="chick-form" enctype="multipart/form-data" method="POST" action="" class="flex flex-col ml-5 mr-5 w-100 lg:w-1/2 lg:mx-auto mt-14 bg-red-500 p-8 rounded-xl relative z-10">
         <label for="firstname" class="mb-2 mt-2 text-slate-50 font-bold uppercase">Firstname :</label>
         <span class="italic text-neutral-950 text-sm"><b class="text-amber-200">*</b> Enter your firstname here. Or is it your lastname ..?</span>
         <input type="text" id="firstname" name="firstname" class="p-2 rounded-md" required aria-required="true" maxlength="100" minlength="3" autocomplete="off">
@@ -38,4 +38,6 @@
         <img class="w-48 h-48 mx-auto" src="./assets/img/poulette.png" alt="Image of a beautifull 'poulette'">
         <figcaption class="text-center italic caption-top">Coât ?</figcaption>
     </figure>
+
+    <noscript>Boh ?!</noscript>
 <?php require "./views/partials/footer.php";?>

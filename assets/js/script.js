@@ -1,5 +1,9 @@
 import { fading } from "./modules/fading.js";
 import { checkIfCompleted } from "./modules/filling.js";
+import { jsIsEnable, noBind } from "./modules/jssecurities.js";
+
+jsIsEnable();
+// noBind();
 
 const fadeElement = document.getElementsByClassName("fading"); 
 function temporization(){
@@ -15,3 +19,4 @@ submitForm.addEventListener("click", event => {
     event.preventDefault();
     checkIfCompleted();
 })
+
