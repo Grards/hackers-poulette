@@ -9,5 +9,5 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Hackers poulette</title>
 </head>
-<body>
+<body class="bg-[url('/hackers-poulette/assets/img/horizontal-farm.jpg')] bg-no-repeat bg-top bg-fixed bg-cover">
     
