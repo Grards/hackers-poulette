@@ -13,11 +13,11 @@
     <form id="chick-form" enctype="multipart/form-data" method="POST" action="./backend/send.php" class="flex flex-col ml-5 mr-5 w-100 lg:w-1/2 lg:mx-auto mt-14 bg-red-500 p-8 rounded-xl relative z-10">
         <label for="firstname" class="mb-2 mt-2 text-slate-50 font-bold uppercase">Firstname :</label>
         <span class="italic text-neutral-950 text-sm"><b class="text-amber-200">*</b> Enter your firstname here. Or is it your lastname ..?</span>
-        <input type="text" id="firstname" name="firstname" class="p-2 rounded-md" required aria-required="true" maxlength="100" autocomplete="off">
+        <input type="text" id="firstname" name="firstname" class="p-2 rounded-md" required aria-required="true" maxlength="100" minlength="3" autocomplete="off">
 
         <label for="lastname" class="mb-2 mt-2 text-slate-50 font-bold uppercase">Lastname :</label>
         <span class="italic text-neutral-950 text-sm"><b class="text-amber-200">*</b> Enter your lastname here. I think so. Yes. That's it.</span>
-        <input type="text" id="lastname" name="lastname" class="p-2 rounded-md focus:outline-teal-40" required aria-required="true" maxlength="100" autocomplete="off">
+        <input type="text" id="lastname" name="lastname" class="p-2 rounded-md focus:outline-teal-40" required aria-required="true" maxlength="100" minlength="3" autocomplete="off">
 
         <label for="email" class="mb-2 mt-2 text-slate-50 font-bold uppercase">Email adress :</label>
         <span class="italic text-neutral-950 text-sm"><b class="text-amber-200">*</b> Draw a superb @. I want a nice curl.</span>
@@ -29,9 +29,9 @@
 
         <label for="description" class="mb-2 mt-2 text-slate-50 font-bold uppercase">Description :</label>
         <span class="italic text-neutral-950 text-sm"><b class="text-amber-200">*</b> Tell us about your life as a chick. It fascinates me. Really, I swear!</span>
-        <textarea id="description" name="description" rows="4" cols="50" class="p-2 rounded-md !outline-teal-40" required aria-required="true" autocomplete="off"></textarea>
+        <textarea id="description" name="description" rows="4" cols="50" class="p-2 rounded-md !outline-teal-40" required aria-required="true" autocomplete="off" minlength="15"></textarea>
 
-        <input type="submit" value="Côt côt Codaaaac !" class="border border-solid border-b border-slate-50 hover:cursor-pointer hover:bg-slate-50 hover:text-red-400 mb-2 mt-10 p-2 text-slate-50 font-bold lg:w-1/3 mx-auto rounded-md uppercase">
+        <input id="submitForm" type="submit" value="Côt côt Codaaaac !" class="border border-solid border-b border-slate-50 hover:cursor-pointer hover:bg-slate-50 hover:text-red-400 mb-2 mt-10 p-2 text-slate-50 font-bold lg:w-1/3 mx-auto rounded-md uppercase">
     </form>
 
     <figure class="hidden lg:block absolute right-8 bottom-8">
