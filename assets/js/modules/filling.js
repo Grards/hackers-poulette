@@ -10,43 +10,78 @@ export function checkIfCompleted(){
     const fileTag = document.getElementById("file");
     const file = fileTag.value.trim();
 
-    console.log(firstname);
-    console.log(lastname);
-    console.log(email);
-    console.log(description);
-    console.log(file);
-
     const firstnameAlert = `The firstname must be filled !`;
-    if(!firstname){
-        if(firstnameTag.previousElementSibling.innerHTML != firstnameAlert){
-            
-            firstnameTag.classList.add("outline");
-            firstnameTag.classList.add("outline-4");
-            firstnameTag.classList.add("outline-amber-300");
-            firstnameTag.classList.add("outline-offset-4");
-            firstnameTag.classList.add("mt-2");
-            firstnameTag.classList.add("mb-2");
-            firstnameTag.previousElementSibling.innerHTML != firstnameAlert ? firstnameTag.insertAdjacentHTML("beforebegin", "<p>" + firstnameAlert + "</p>") : "";
-            firstnameTag.previousElementSibling.classList.add("text-amber-200");
-            firstnameTag.previousElementSibling.classList.add("mt-2");
-            return;
-        }
-    }else{
-        if(firstnameTag.previousElementSibling.innerHTML == firstnameAlert){
-            firstnameTag.classList.remove("outline");
-            firstnameTag.classList.remove("outline-4");
-            firstnameTag.classList.remove("outline-amber-300");
-            firstnameTag.classList.remove("outline-offset-4");
-            firstnameTag.classList.remove("mt-2");
-            firstnameTag.classList.remove("mt-2");
-            firstnameTag.previousElementSibling.classList.remove("text-amber-200");
-            firstnameTag.previousElementSibling.classList.remove("mt-2");
-            firstnameTag.previousElementSibling.removeAttribute("class");
-            firstnameTag.previousElementSibling.innerHTML == firstnameAlert ? firstnameTag.previousElementSibling.remove() : "";
-        }
-    }
+    const lastnameAlert = `The lastname must be filled !`;
+    const emailAlert = `The email must be filled !`;
+    const descriptionAlert = `The description must be filled !`;
 
+    const alerts = [firstnameAlert, lastnameAlert, emailAlert, descriptionAlert];
+    const tags = [firstnameTag, lastnameTag, emailTag, descriptionTag];
+    const datas = [firstname, lastname, email, description, file];
+
+
+    let $i = 0;
+    tags.forEach(tag => {
+        if(!tag.value){
+            if(tag.previousElementSibling.innerHTML != alerts[$i]){
+                console.log(tag.name + "Alert");
+                tag.classList.add("outline");
+                tag.classList.add("outline-4");
+                tag.classList.add("outline-amber-300");
+                tag.classList.add("outline-offset-4");
+                tag.classList.add("mt-2");
+                tag.classList.add("mb-2");
+                tag.previousElementSibling.innerHTML != alerts[$i] ? tag.insertAdjacentHTML("beforebegin", "<p>" + alerts[$i] + "</p>") : "";
+                tag.previousElementSibling.classList.add("text-amber-200");
+                tag.previousElementSibling.classList.add("mt-2");
+            }
+        }else{
+            if(tag.previousElementSibling.innerHTML == alerts[$i]){
+                tag.classList.remove("outline");
+                tag.classList.remove("outline-4");
+                tag.classList.remove("outline-amber-300");
+                tag.classList.remove("outline-offset-4");
+                tag.classList.remove("mt-2");
+                tag.classList.remove("mt-2");
+                tag.previousElementSibling.classList.remove("text-amber-200");
+                tag.previousElementSibling.classList.remove("mt-2");
+                tag.previousElementSibling.removeAttribute("class");
+                tag.previousElementSibling.innerHTML == alerts[$i] ? tag.previousElementSibling.remove() : "";
+            }
+        }
+        $i++;
+    });
 }
+
+    // if(!firstname){
+    //     if(firstnameTag.previousElementSibling.innerHTML != firstnameAlert){
+            
+    //         firstnameTag.classList.add("outline");
+    //         firstnameTag.classList.add("outline-4");
+    //         firstnameTag.classList.add("outline-amber-300");
+    //         firstnameTag.classList.add("outline-offset-4");
+    //         firstnameTag.classList.add("mt-2");
+    //         firstnameTag.classList.add("mb-2");
+    //         firstnameTag.previousElementSibling.innerHTML != firstnameAlert ? firstnameTag.insertAdjacentHTML("beforebegin", "<p>" + firstnameAlert + "</p>") : "";
+    //         firstnameTag.previousElementSibling.classList.add("text-amber-200");
+    //         firstnameTag.previousElementSibling.classList.add("mt-2");
+    //         return;
+    //     }
+    // }else{
+    //     if(firstnameTag.previousElementSibling.innerHTML == firstnameAlert){
+    //         firstnameTag.classList.remove("outline");
+    //         firstnameTag.classList.remove("outline-4");
+    //         firstnameTag.classList.remove("outline-amber-300");
+    //         firstnameTag.classList.remove("outline-offset-4");
+    //         firstnameTag.classList.remove("mt-2");
+    //         firstnameTag.classList.remove("mt-2");
+    //         firstnameTag.previousElementSibling.classList.remove("text-amber-200");
+    //         firstnameTag.previousElementSibling.classList.remove("mt-2");
+    //         firstnameTag.previousElementSibling.removeAttribute("class");
+    //         firstnameTag.previousElementSibling.innerHTML == firstnameAlert ? firstnameTag.previousElementSibling.remove() : "";
+    //     }
+    // }
+
 
 
 
