@@ -22,7 +22,6 @@ export function checkIfCompleted(){
 
     const alerts = [firstnameAlert, lastnameAlert, emailAlert, descriptionAlert];
     const tags = [firstnameTag, lastnameTag, emailTag, descriptionTag];
-    const datas = [firstname, lastname, email, description, file];
 
 
     let $i = 0;
