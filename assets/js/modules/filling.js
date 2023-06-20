@@ -17,6 +17,8 @@ export function checkIfCompleted(){
 
     const threeCharacsAlert = `This field require 3 characters minimum`;
     const fifteenCharacsAlert = `This field require 15 characters minimum`;
+    const emailInvalid = `This email is not valid !`;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     const alerts = [firstnameAlert, lastnameAlert, emailAlert, descriptionAlert];
     const tags = [firstnameTag, lastnameTag, emailTag, descriptionTag];
@@ -61,9 +63,21 @@ export function checkIfCompleted(){
                 tag.classList.add("mt-2");
                 tag.classList.add("mb-2");
             }
+            else if(tag.id == "email" && !emailRegex.test(tag.value)){
+                tag.previousElementSibling.innerHTML != emailInvalid ? tag.insertAdjacentHTML("beforebegin", "<p>" + emailInvalid + "</p>") : "";
+                tag.previousElementSibling.classList.add("text-amber-200");
+                tag.previousElementSibling.classList.add("mt-2");
+                tag.classList.add("outline");
+                tag.classList.add("outline-4");
+                tag.classList.add("outline-amber-300");
+                tag.classList.add("outline-offset-4");
+                tag.classList.add("mt-2");
+                tag.classList.add("mb-2");
+            }
             else{
                 tag.previousElementSibling.innerHTML == threeCharacsAlert ? tag.previousElementSibling.remove() : "";
                 tag.previousElementSibling.innerHTML == fifteenCharacsAlert ? tag.previousElementSibling.remove() : "";
+                tag.previousElementSibling.innerHTML == emailInvalid ? tag.previousElementSibling.remove() : "";
                 tag.classList.remove("outline");
                 tag.classList.remove("outline-4");
                 tag.classList.remove("outline-amber-300");
