@@ -8,9 +8,13 @@
         if(isset($_GET[htmlspecialchars("send")])){
             echo '<section class="fading bg-emerald-500 text-center text-slate-50 p-2 mt-10 mb-5 w-96 mx-auto"><p>Message sended !</p></section>';
         }
+        if(isset($_GET[htmlspecialchars("errMail")])){
+            echo '<section class="fading bg-red-500 text-center text-slate-50 p-2 mt-10 mb-5 w-96 mx-auto"><p>Sorry. The DNS for this email doesn\'t exist !</p></section>';
+        }
+
     ?>
 
-    <form id="chick-form" enctype="multipart/form-data" method="POST" action="" class="flex flex-col ml-5 mr-5 w-100 lg:w-1/2 lg:mx-auto mt-14 mb-10 bg-red-500 p-8 rounded-xl relative z-10">
+    <form id="chick-form" enctype="multipart/form-data" method="POST" action="/hackers-poulette/backend/send.php" class="flex flex-col ml-5 mr-5 w-100 lg:w-1/2 lg:mx-auto mt-14 mb-10 bg-red-500 p-8 rounded-xl relative z-10">
         <label for="firstname" class="mb-2 mt-2 text-slate-50 font-bold uppercase">Firstname :</label>
         <span class="italic text-neutral-950 text-sm"><b class="text-amber-200">*</b> Enter your firstname here. Or is it your lastname ..?</span>
         <input type="text" id="firstname" name="firstname" class="p-2 rounded-md" required aria-required="true" maxlength="100" minlength="3" autocomplete="off">

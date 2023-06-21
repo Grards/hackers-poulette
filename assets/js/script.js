@@ -16,7 +16,6 @@ setTimeout(temporization,2000);
 const submitForm = document.getElementById("submitForm");
 
 submitForm.addEventListener("click", event => {
-    event.preventDefault();
-    checkIfCompleted();
+    checkIfCompleted(event);
 })
 

@@ -51,15 +51,12 @@
             $sql = "INSERT IGNORE INTO hackers_poulette (firstname, lastname, email, description, filename) VALUES (?,?,?,?,?)";
             $query= $pdo->prepare($sql);
             $query->execute([$firstname, $lastname, $email, $description, $_FILES['file']['name']]);
+            $lastid = filter_var(htmlentities($pdo->lastInsertId()), FILTER_SANITIZE_NUMBER_INT);
+            header('Location: /hackers-poulette/index.php?send='.$lastid);
         } catch(Exception $e){
             die('Erreur : '.$e->getMessage());
         }
     }else {
-        header('Location: /hackers-poulette/index.php');
+        header('Location: /hackers-poulette/index.php/errMail');
     }
-
-    
-
-    $lastid = filter_var(htmlentities($pdo->lastInsertId()), FILTER_SANITIZE_NUMBER_INT);
-    header('Location: /hackers-poulette/index.php?send='.$lastid);
 ?>

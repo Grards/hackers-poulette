@@ -1,4 +1,4 @@
-export function checkIfCompleted(){
+export function checkIfCompleted(event){
     const firstnameTag = document.getElementById("firstname");
     const firstname = firstnameTag.value.trim();
     const lastnameTag = document.getElementById("lastname");
@@ -37,6 +37,7 @@ export function checkIfCompleted(){
                 tag.previousElementSibling.innerHTML != alerts[$i] ? tag.insertAdjacentHTML("beforebegin", "<p>" + alerts[$i] + "</p>") : "";
                 tag.previousElementSibling.classList.add("text-amber-200");
                 tag.previousElementSibling.classList.add("mt-2");
+                event.preventDefault();
             }
         }else{
             tag.previousElementSibling.innerHTML == alerts[$i] ? tag.previousElementSibling.remove() : "";
@@ -50,6 +51,7 @@ export function checkIfCompleted(){
                 tag.classList.add("outline-offset-4");
                 tag.classList.add("mt-2");
                 tag.classList.add("mb-2");
+                event.preventDefault();
             }
             else if(tag.value.length >= 1 && tag.value.length < 15 && tag.id == "description"){
                 tag.previousElementSibling.innerHTML != fifteenCharacsAlert ? tag.insertAdjacentHTML("beforebegin", "<p>" + fifteenCharacsAlert + "</p>") : "";
@@ -61,6 +63,7 @@ export function checkIfCompleted(){
                 tag.classList.add("outline-offset-4");
                 tag.classList.add("mt-2");
                 tag.classList.add("mb-2");
+                event.preventDefault();
             }
             else if(tag.id == "email" && !emailRegex.test(tag.value)){
                 tag.previousElementSibling.innerHTML != emailInvalid ? tag.insertAdjacentHTML("beforebegin", "<p>" + emailInvalid + "</p>") : "";
@@ -72,6 +75,7 @@ export function checkIfCompleted(){
                 tag.classList.add("outline-offset-4");
                 tag.classList.add("mt-2");
                 tag.classList.add("mb-2");
+                event.preventDefault();
             }
             else{
                 tag.previousElementSibling.innerHTML == threeCharacsAlert ? tag.previousElementSibling.remove() : "";
