@@ -1,6 +1,7 @@
 <?php 
     ob_start();
     require "connection.php"; 
+    require '../vendor/autoload.php';
     $pdo = connection();
 
     // Sanitization
@@ -57,6 +58,20 @@
                 $query= $pdo->prepare($sql);
                 $query->execute([$firstname, $lastname, $email, $description, $_FILES['file']['name']]);
                 $lastid = filter_var(htmlentities($pdo->lastInsertId()), FILTER_SANITIZE_NUMBER_INT);
+
+                $transport = new Swift_SmtpTransport('smtp-relay.sendinblue.com', 587);
+                $transport->setUsername('stevegrard1@gmail.com');
+                $transport->setPassword('ZFTdgqLVROI8Q2nz');
+            
+                $mailer = new Swift_Mailer($transport);
+            
+                $message = new Swift_Message('Confirmation Email');
+                $message->setFrom('stevegrard1@gmail.com');
+                $message->setTo($email); 
+                $message->setBody('Thank you for contacting us! We have received your message.');
+            
+                $result = $mailer->send($message);
+
                 header('Location: /hackers-poulette/index.php?send='.$lastid);
                 ob_end_flush();
             } catch(Exception $e){
