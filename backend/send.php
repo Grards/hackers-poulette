@@ -49,7 +49,7 @@
     if (checkdnsrr($domain . '.', 'MX')) {
         if(!empty($_POST['address'])){
             var_dump($_POST['address']);
-            header('Location: /hackers-poulette/index.php?err1');
+            header('Location: /hackers-poulette/index.php?err2');
             ob_end_flush();
         } else {
             try{
@@ -64,7 +64,7 @@
             }
         }
     }else {
-        header('Location: /hackers-poulette/index.php?err2');
+        header('Location: /hackers-poulette/index.php?err1');
         ob_end_flush();
     }
 ?>
