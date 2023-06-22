@@ -11,7 +11,8 @@ Sanitization, Validation, Security, UX/UI
 
 ## Screenshots
 
-![App Screenshot](https://raw.githubusercontent.com/becodeorg/CRL-Wilson-2/main/1.TRAIL/3.The-Mountain/projects/AZ_Store/az_store.png?token=GHSAT0AAAAAACCIAI3KYQKPIROEFZFG4AJCZEG2J3Q)
+![Desktop Example](https://raw.githubusercontent.com/Grards/hackers-poulette/main/assets/img/example-desktop.png)
+![Mobile Example](https://raw.githubusercontent.com/Grards/hackers-poulette/main/assets/img/example-mobile.png)
 
 
 ## Deployment
