@@ -8,10 +8,10 @@
         if(isset($_GET[htmlspecialchars("send")])){
             echo '<section class="fading bg-emerald-500 text-center text-slate-50 p-2 mt-10 mb-5 w-96 mx-auto"><p>Message sended !</p></section>';
         }
-        if(isset($_GET[htmlspecialchars("errMail")])){
+        if(isset($_GET[htmlspecialchars("err1")])){
             echo '<section class="fading bg-red-500 text-center text-slate-50 p-2 mt-10 mb-5 w-96 mx-auto"><p>Sorry. The DNS for this email doesn\'t exist !</p></section>';
         }
-        if(isset($_GET[htmlspecialchars("errHoney")])){
+        if(isset($_GET[htmlspecialchars("err2")])){
             echo '<section class="fading bg-red-500 text-center text-slate-50 p-2 mt-10 mb-5 w-96 mx-auto"><p>Sorry. Go out, BOT !</p></section>';
         }
         $action = "/hackers-poulette/backend/send.php";
