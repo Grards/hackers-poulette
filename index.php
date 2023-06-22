@@ -11,29 +11,35 @@
         if(isset($_GET[htmlspecialchars("errMail")])){
             echo '<section class="fading bg-red-500 text-center text-slate-50 p-2 mt-10 mb-5 w-96 mx-auto"><p>Sorry. The DNS for this email doesn\'t exist !</p></section>';
         }
-
+        if(isset($_GET[htmlspecialchars("errHoney")])){
+            echo '<section class="fading bg-red-500 text-center text-slate-50 p-2 mt-10 mb-5 w-96 mx-auto"><p>Sorry. Go out, BOT !</p></section>';
+        }
+        $action = "/hackers-poulette/backend/send.php";
     ?>
 
-    <form id="chick-form" enctype="multipart/form-data" method="POST" action="/hackers-poulette/backend/send.php" class="flex flex-col ml-5 mr-5 w-100 lg:w-1/2 lg:mx-auto mt-14 mb-10 bg-red-500 p-8 rounded-xl relative z-10">
+    <form id="chick-form" enctype="multipart/form-data" method="POST" action=<?php echo htmlspecialchars($action); ?> class="flex flex-col ml-5 mr-5 w-100 lg:w-1/2 lg:mx-auto mt-14 mb-10 bg-red-500 p-8 rounded-xl relative z-10">
         <label for="firstname" class="mb-2 mt-2 text-slate-50 font-bold uppercase">Firstname :</label>
         <span class="italic text-neutral-950 text-sm"><b class="text-amber-200">*</b> Enter your firstname here. Or is it your lastname ..?</span>
-        <input type="text" id="firstname" name="firstname" class="p-2 rounded-md" required aria-required="true" maxlength="100" minlength="3" autocomplete="off">
+        <input type="text" id="firstname" autocomplete="off" name="firstname" class="p-2 rounded-md" required aria-required="true" maxlength="100" minlength="3" autocomplete="off">
 
         <label for="lastname" class="mb-2 mt-2 text-slate-50 font-bold uppercase">Lastname :</label>
         <span class="italic text-neutral-950 text-sm"><b class="text-amber-200">*</b> Enter your lastname here. I think so. Yes. That's it.</span>
-        <input type="text" id="lastname" name="lastname" class="p-2 rounded-md focus:outline-teal-40" required aria-required="true" maxlength="100" minlength="3" autocomplete="off">
+        <input type="text" id="lastname" autocomplete="off" name="lastname" class="p-2 rounded-md focus:outline-teal-40" required aria-required="true" maxlength="100" minlength="3" autocomplete="off">
 
         <label for="email" class="mb-2 mt-2 text-slate-50 font-bold uppercase">Email adress :</label>
         <span class="italic text-neutral-950 text-sm"><b class="text-amber-200">*</b> Draw a superb @. I want a nice curl.</span>
-        <input type="mail" id="email" name="email" class="p-2 rounded-md focus:outline-teal-40" required aria-required="true" maxlength="100" autocomplete="off">
+        <input type="mail" id="email" autocomplete="off" name="email" class="p-2 rounded-md focus:outline-teal-40" required aria-required="true" maxlength="100" autocomplete="off">
 
         <label for="file" class="mb-2 mt-2 text-slate-50 font-bold uppercase">File (png or jpeg) :</label>
         <span class="italic text-neutral-950 text-sm">Send me a gentle chick with superb feathers.</span>
-        <input type="file" id="file" name="file" accept="image/png, image/jpeg, image/jpg" class="text-slate-50 rounded-md">
+        <input type="file" id="file" autocomplete="off" name="file" accept="image/png, image/jpeg, image/jpg" class="text-slate-50 rounded-md">
 
         <label for="description" class="mb-2 mt-2 text-slate-50 font-bold uppercase">Description :</label>
         <span class="italic text-neutral-950 text-sm"><b class="text-amber-200">*</b> Tell us about your life as a chick. It fascinates me. Really, I swear!</span>
-        <textarea id="description" name="description" rows="4" cols="50" class="p-2 rounded-md !outline-teal-40" required aria-required="true" autocomplete="off" minlength="15"></textarea>
+        <textarea id="description" autocomplete="off" name="description" rows="4" cols="50" class="p-2 rounded-md !outline-teal-40" required aria-required="true" autocomplete="off" minlength="15"></textarea>
+
+        <label class="address" for="address"></label>
+        <input id="address" autocomplete="off" type="text" id="address" name="address">
 
         <input id="submitForm" type="submit" value="Côt côt Codaaaac !" class="border border-solid border-b border-slate-50 hover:cursor-pointer hover:bg-slate-50 hover:text-red-400 mb-2 mt-10 p-2 text-slate-50 font-bold w-2/3 lg:w-1/3 mx-auto rounded-md uppercase">
     </form>

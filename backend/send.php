@@ -7,6 +7,12 @@
     $lastname = $_POST[htmlentities('lastname')];
     $email = filter_var($_POST[htmlentities('email')], FILTER_VALIDATE_EMAIL);
     $description = $_POST[htmlentities('description')];
+    $address = $_POST[htmlentities('address')];
+
+    // Honeypot verification
+    if(isset($address)){
+        header('Location: /hackers-poulette/index.php/errHoney');
+    }
 
     // File validation
     define("ALLOWED_SIZE", 2097152);    // CHANGE ALLOWED SIZE AS YOUR NEED
