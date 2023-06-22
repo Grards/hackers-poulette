@@ -39,7 +39,7 @@
         <textarea id="description" autocomplete="off" name="description" rows="4" cols="50" class="p-2 rounded-md !outline-teal-40" required aria-required="true" autocomplete="off" minlength="15"></textarea>
 
         <label class="address" for="address"></label>
-        <input id="address" autocomplete="off" type="text" id="address" name="address">
+        <input class="address" autocomplete="off" type="text" id="address" name="address">
 
         <input id="submitForm" type="submit" value="Côt côt Codaaaac !" class="border border-solid border-b border-slate-50 hover:cursor-pointer hover:bg-slate-50 hover:text-red-400 mb-2 mt-10 p-2 text-slate-50 font-bold w-2/3 lg:w-1/3 mx-auto rounded-md uppercase">
     </form>
